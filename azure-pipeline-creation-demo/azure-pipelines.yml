@@ -1,0 +1,20 @@
+trigger:
+  branches:
+    include:
+      - main
+      - feature/learn-basics
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  codeCoverageThreshold: 85
+
+stages:
+  - stage: Build
+    displayName: Build Stage
+    jobs:
+      - job: BuildJob
+        steps:
+          - task: Maven@3
+        
